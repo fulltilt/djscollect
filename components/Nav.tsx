@@ -8,12 +8,12 @@ import { usePathname } from "next/navigation";
 import { ComponentProps, useState } from "react";
 import CartSheet from "./cart/CartSheet";
 
-export function Nav({ navCart }: { navCart: Cart }) {
+export function Nav() {
   const [showSheet, setShowSheet] = useState(false);
-  const [cart, setCart] = useState<Cart>(navCart);
+  // const [cart, setCart] = useState<Cart>(navCart);
 
   let quantity = 0;
-  if (cart) quantity = cart.lines.reduce((acc, curr) => acc + curr.quantity, 0);
+  // if (cart) quantity = cart.lines.reduce((acc, curr) => acc + curr.quantity, 0);
 
   return (
     <>
@@ -37,14 +37,14 @@ export function Nav({ navCart }: { navCart: Cart }) {
           </div>
         </div>
       </nav>
-      {cart && (
+      {/* {cart && (
         <CartSheet
           showSheet={showSheet}
           setShowSheet={setShowSheet}
           cart={cart}
           setCart={setCart}
         />
-      )}
+      )} */}
     </>
   );
 }

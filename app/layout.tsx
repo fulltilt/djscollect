@@ -1,11 +1,7 @@
-import { useEffect, useState } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
-import { cookies } from "next/headers";
-import { getCartAction } from "@/components/actions";
-import { Cart } from "./api/shopify/types";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,19 +15,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [cart, setCart] = useState<Cart>();
-
-  // useEffect(() => {
-
-  // }, [cart])
-  let cartId = cookies().get("cartId")?.value;
-  if (!cartId) return null;
-  getCartAction(cartId).then((cart) => setCart(cart));
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        {cart && <Nav navCart={cart} />}
+        <Nav />
         {children}
       </body>
     </html>
