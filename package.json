@@ -12,6 +12,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-email/components": "^0.0.16",
     "@shopify/storefront-api-client": "^0.3.3",
     "@stripe/react-stripe-js": "^2.7.0",
     "class-variance-authority": "^0.7.0",
