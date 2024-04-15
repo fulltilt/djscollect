@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentProps, useState } from "react";
+import { ComponentProps } from "react";
 import CartSheet from "./cart/CartSheet";
 
 export function Nav() {
-  const [showSheet, setShowSheet] = useState(false);
+  // const [showSheet, setShowSheet] = useState(false);
   // const [cart, setCart] = useState<Cart>(navCart);
 
   let quantity = 0;
@@ -26,7 +26,7 @@ export function Nav() {
         <div className="m-4">
           <div
             className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-white transition-colors dark:border-neutral-700 dark:text-white"
-            onClick={() => setShowSheet(true)}
+            // onClick={() => setShowSheet(true)}
           >
             <ShoppingCart className="h-4 transition-all ease-in-out hover:scale-110" />
             {quantity ? (
