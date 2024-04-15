@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentProps } from "react";
+import { ComponentProps, useState } from "react";
 import CartSheet from "./cart/CartSheet";
 
-export function Nav() {
+export function Nav({ cartId }: { cartId: string }) {
   // const [showSheet, setShowSheet] = useState(false);
-  // const [cart, setCart] = useState<Cart>(navCart);
+  const [cart, setCart] = useState<Cart>();
 
   let quantity = 0;
   // if (cart) quantity = cart.lines.reduce((acc, curr) => acc + curr.quantity, 0);

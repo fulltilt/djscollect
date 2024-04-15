@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
+import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let cartId = cookies().get("cartId")?.value;
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
-        {children}
+        <Nav cartId={cartId} />
+        <div className="container my-6">{children}</div>
       </body>
     </html>
   );
