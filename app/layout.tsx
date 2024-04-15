@@ -16,7 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let cartId = cookies().get("cartId")?.value;
+  let cartId = cookies().get("cartId")?.value || "";
 
   return (
     <html lang="en">
