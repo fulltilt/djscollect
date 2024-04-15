@@ -24,14 +24,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "bg-background min-h-screen font-sans antialiased",
-          inter.variable
-        )}
-      >
-        <Nav navCart={cart} />
-        <div className="container my-6">{children}</div>
+      <body>
+        {children}
+        {/* <Nav navCart={cart} /> */}
+        {/* <div className="container my-6">{children}</div> */}
       </body>
     </html>
   );
