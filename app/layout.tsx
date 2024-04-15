@@ -16,12 +16,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let cartId = cookies().get("cartId")?.value || "";
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav cartId={cartId} />
+        <Nav />
         <div className="container my-6">{children}</div>
       </body>
     </html>

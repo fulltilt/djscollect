@@ -45,7 +45,7 @@ export async function getCartAction(cartId: string) {
   return reshapeCart(cart);
 }
 
-export async function addItem(product: ProductCardProps) {
+export async function addItem(product: ProductCardProps | undefined) {
   let cartId = cookies().get("cartId")?.value;
   let cart;
 
@@ -59,11 +59,14 @@ export async function addItem(product: ProductCardProps) {
     cookies().set("cartId", cartId);
   }
 
+  if (!product) return cart;
+
   try {
     let cart = await addToCart(cartId, [
       { merchandiseId: product.id, quantity: 1 },
     ]);
     return reshapeCart(cart);
+
     // revalidateTag(TAGS.cart);
   } catch (e) {
     console.log(e);
